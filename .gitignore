@@ -1,0 +1,25 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next
+.next
+out
+
+# env
+.env
+.env*.local
+
+# debug / os
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# typescript
+*.tsbuildinfo
+
+# ide
+.idea
+.vscode
