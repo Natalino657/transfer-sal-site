@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const HERO_IMAGES = [
   "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1519046904884-531933e7df08?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80",
 ];
 
 const SLIDE_MS = 7000;

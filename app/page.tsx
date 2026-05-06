@@ -22,7 +22,7 @@ const PHONE_DISPLAY = "+238 9837959";
 const PHONE_HREF = "tel:+2389837959";
 const WHATSAPP_DISPLAY = "+238 9837959";
 const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_DISPLAY.replace(/\D/g, "")}`;
-const EMAIL = "reservas@transfer-sal.cv";
+const EMAIL = "cz45538@gmail.com";
 
 const GALLERY = [
   {
@@ -49,17 +49,29 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
-            <a href="#servicos" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+            <a
+              href="#servicos"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
+            >
               Serviços
             </a>
-            <a href="#momentos" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+            <a
+              href="#momentos"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
+            >
               Momentos
             </a>
-            <a href="#contacto" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+            <a
+              href="#contacto"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
+            >
               Contacto
             </a>
             <Separator orientation="vertical" className="mx-1 h-6" />
-            <a href={PHONE_HREF} className={buttonVariants({ variant: "default", size: "sm" })}>
+            <a
+              href={PHONE_HREF}
+              className={buttonVariants({ variant: "default", size: "sm" })}
+            >
               <PhoneIcon className="size-4" />
               Ligar
             </a>
@@ -79,7 +91,13 @@ export default function Home() {
             </a>
             <Sheet>
               <SheetTrigger
-                render={<Button variant="ghost" size="icon-sm" aria-label="Abrir menu" />}
+                render={
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    aria-label="Abrir menu"
+                  />
+                }
               >
                 <MenuIcon />
               </SheetTrigger>
@@ -88,17 +106,41 @@ export default function Home() {
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-1 p-4">
-                  <a href="#servicos" className={cn(buttonVariants({ variant: "ghost" }), "justify-start")}>
+                  <a
+                    href="#servicos"
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "justify-start",
+                    )}
+                  >
                     Serviços
                   </a>
-                  <a href="#momentos" className={cn(buttonVariants({ variant: "ghost" }), "justify-start")}>
+                  <a
+                    href="#momentos"
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "justify-start",
+                    )}
+                  >
                     Momentos
                   </a>
-                  <a href="#contacto" className={cn(buttonVariants({ variant: "ghost" }), "justify-start")}>
+                  <a
+                    href="#contacto"
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "justify-start",
+                    )}
+                  >
                     Contacto
                   </a>
                   <Separator className="my-2" />
-                  <a href={PHONE_HREF} className={cn(buttonVariants({ variant: "default" }), "justify-start gap-2")}>
+                  <a
+                    href={PHONE_HREF}
+                    className={cn(
+                      buttonVariants({ variant: "default" }),
+                      "justify-start gap-2",
+                    )}
+                  >
                     <PhoneIcon className="size-4" />
                     Ligar {PHONE_DISPLAY}
                   </a>
@@ -106,7 +148,10 @@ export default function Home() {
                     href={WHATSAPP_HREF}
                     target="_blank"
                     rel="noreferrer"
-                    className={cn(buttonVariants({ variant: "outline" }), "justify-start")}
+                    className={cn(
+                      buttonVariants({ variant: "outline" }),
+                      "justify-start",
+                    )}
                   >
                     Abrir WhatsApp
                   </a>
@@ -133,8 +178,8 @@ export default function Home() {
               Reservas tratadas por telefone ou WhatsApp
             </h2>
             <p className="mt-3 text-muted-foreground md:text-lg">
-              Explicamos disponibilidade, preço e horários em conversa — rápido e
-              personalizado, só por chamada ou WhatsApp.
+              Explicamos disponibilidade, preço e horários em conversa — rápido
+              e personalizado, só por chamada ou WhatsApp.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a href={PHONE_HREF} className={buttonVariants({ size: "lg" })}>
@@ -160,8 +205,8 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold">O que fazemos</h2>
               <p className="mt-2 text-muted-foreground">
-                Serviços pensados para turistas e residentes — combina connosco por
-                chamada.
+                Serviços pensados para turistas e residentes — combina connosco
+                por chamada.
               </p>
             </div>
           </ScrollReveal>
@@ -183,7 +228,9 @@ export default function Home() {
               <ScrollReveal key={item.title} delayMs={idx * 80}>
                 <Card className="h-full border-border/80 p-6 transition-shadow hover:shadow-md">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {item.body}
+                  </p>
                   <p className="mt-4 text-xs font-medium text-primary">
                     Marcação: {PHONE_DISPLAY} ou WhatsApp
                   </p>
@@ -200,7 +247,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold">Momentos</h2>
               <p className="mt-2 max-w-xl text-muted-foreground">
-                Imagens de exemplo 
+                Imagens de exemplo
               </p>
             </div>
           </div>
@@ -228,14 +275,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="border-t bg-gradient-to-b from-muted/40 to-background">
+      <section
+        id="contacto"
+        className="border-t bg-gradient-to-b from-muted/40 to-background"
+      >
         <div className="container mx-auto px-4 py-14 md:py-20">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold md:text-4xl">Fala connosco</h2>
               <p className="mt-3 text-muted-foreground md:text-lg">
-                O jeito mais simples: uma chamada ou uma mensagem. Respondemos o mais
-                depressa possível.
+                O jeito mais simples: uma chamada ou uma mensagem. Respondemos o
+                mais depressa possível.
               </p>
             </div>
           </ScrollReveal>
@@ -250,11 +300,17 @@ export default function Home() {
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     Telefone
                   </div>
-                  <a href={PHONE_HREF} className="mt-1 block text-xl font-semibold hover:underline">
+                  <a
+                    href={PHONE_HREF}
+                    className="mt-1 block text-xl font-semibold hover:underline"
+                  >
                     {PHONE_DISPLAY}
                   </a>
                 </div>
-                <a href={PHONE_HREF} className={buttonVariants({ className: "w-full sm:w-auto" })}>
+                <a
+                  href={PHONE_HREF}
+                  className={buttonVariants({ className: "w-full sm:w-auto" })}
+                >
                   Ligar agora
                 </a>
               </Card>
@@ -270,13 +326,18 @@ export default function Home() {
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     WhatsApp
                   </div>
-                  <p className="mt-1 text-xl font-semibold">{WHATSAPP_DISPLAY}</p>
+                  <p className="mt-1 text-xl font-semibold">
+                    {WHATSAPP_DISPLAY}
+                  </p>
                 </div>
                 <a
                   href={WHATSAPP_HREF}
                   target="_blank"
                   rel="noreferrer"
-                  className={buttonVariants({ variant: "secondary", className: "w-full sm:w-auto" })}
+                  className={buttonVariants({
+                    variant: "secondary",
+                    className: "w-full sm:w-auto",
+                  })}
                 >
                   Abrir conversa
                 </a>
@@ -291,7 +352,10 @@ export default function Home() {
                   <MailIcon className="mt-0.5 size-5 text-muted-foreground" />
                   <div>
                     <div className="text-sm font-semibold">Email</div>
-                    <a href={`mailto:${EMAIL}`} className="text-muted-foreground hover:text-foreground hover:underline">
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      className="text-muted-foreground hover:text-foreground hover:underline"
+                    >
                       {EMAIL}
                     </a>
                   </div>
@@ -300,7 +364,9 @@ export default function Home() {
                   <MapPinIcon className="mt-0.5 size-5 shrink-0 text-muted-foreground" />
                   <div>
                     <div className="text-sm font-semibold">Local</div>
-                    <p className="text-sm text-muted-foreground">Ilha do Sal, Cabo Verde</p>
+                    <p className="text-sm text-muted-foreground">
+                      Ilha do Sal, Cabo Verde
+                    </p>
                   </div>
                 </div>
               </div>
@@ -325,7 +391,10 @@ export default function Home() {
 
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
         <div className="container mx-auto grid grid-cols-2 gap-2 px-3 py-2.5">
-          <a href={PHONE_HREF} className={cn(buttonVariants(), "w-full gap-1.5")}>
+          <a
+            href={PHONE_HREF}
+            className={cn(buttonVariants(), "w-full gap-1.5")}
+          >
             <PhoneIcon className="size-4" />
             Ligar
           </a>
