@@ -74,11 +74,11 @@ const pt = {
 
   moments: {
     title: "Momentos",
-    body: "Imagens de exemplo",
+    body: "Alguns cenários reais da Ilha do Sal.",
     gallery: [
-      "Estrada à beira-mar",
-      "Viagem ao pôr do sol",
-      "Conforto a bordo",
+      "Praia em Santa Maria",
+      "Buracona, Blue Eye",
+      "Salinas de Pedra de Lume",
     ],
   },
 
@@ -155,8 +155,8 @@ const en = {
 
   moments: {
     title: "Moments",
-    body: "Sample images",
-    gallery: ["Seaside road", "Sunset ride", "Comfort on board"],
+    body: "A few real views from Sal Island.",
+    gallery: ["Santa Maria beach", "Buracona, Blue Eye", "Pedra de Lume salt pans"],
   },
 
   contact: {

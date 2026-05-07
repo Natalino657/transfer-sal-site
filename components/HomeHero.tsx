@@ -8,12 +8,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1592761684665-92bc9aacf340?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1714829732963-0d6801f93781?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1714829732325-e0a0992cc936?auto=format&fit=crop&w=1920&q=80",
 ];
 
-const SLIDE_MS = 7000;
+const SLIDE_MS = 5000;
 
 type HomeHeroProps = {
   phoneDisplay: string;

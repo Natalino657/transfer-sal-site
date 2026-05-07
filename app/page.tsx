@@ -28,16 +28,16 @@ const EMAIL = "cz45538@gmail.com";
 
 const GALLERY = [
   {
-    title: "Estrada à beira-mar",
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    title: "Praia em Santa Maria",
+    src: "https://images.unsplash.com/photo-1592761684665-92bc9aacf340?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Viagem ao pôr do sol",
-    src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80",
+    title: "Buracona, Blue Eye",
+    src: "https://images.unsplash.com/photo-1714829732963-0d6801f93781?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Conforto a bordo",
-    src: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=80",
+    title: "Salinas de Pedra de Lume",
+    src: "https://images.unsplash.com/photo-1714829732325-e0a0992cc936?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
