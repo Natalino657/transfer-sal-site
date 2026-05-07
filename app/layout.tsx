@@ -15,7 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Transfer Ilha do Sal — Contacto directo",
   description:
-    "Transfer no Sal (Cabo Verde): aeroporto ↔ hotel e passeios. Marca por telefone ou WhatsApp; reserva online opcional.",
+    "Transfer no Sal (Cabo Verde): aeroporto ↔ hotel e passeios. Marca por telefone ou WhatsApp",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+    ],
+    shortcut: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({

@@ -67,7 +67,9 @@ export default function HomeHero({
           key={src}
           className={cn(
             "absolute inset-0 transition-opacity duration-[1.4s] ease-out",
-            i === active ? "opacity-100 z-0" : "opacity-0 z-0 pointer-events-none",
+            i === active
+              ? "opacity-100 z-0"
+              : "opacity-0 z-0 pointer-events-none",
           )}
           aria-hidden={i !== active}
         >
@@ -97,16 +99,22 @@ export default function HomeHero({
         </p>
         <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm md:text-5xl lg:text-6xl">
           Transfer confortável.{" "}
-          <span className="text-amber-100">Fala connosco</span> e tratamos da tua
-          viagem.
+          <span className="text-amber-100">Fala connosco</span> e tratamos da
+          tua viagem.
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/85 md:text-xl">
-          Aeroporto, hotel e passeios — marca por telefone ou WhatsApp e combinamos
-          tudo contigo, sem complicações.
+          Aeroporto, hotel e passeios — marca por telefone ou WhatsApp e
+          combinamos tudo contigo, sem complicações.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          <a href={phoneHref} className={cn(buttonVariants({ size: "lg" }), "gap-2 text-base shadow-lg")}>
+          <a
+            href={phoneHref}
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "gap-2 text-base shadow-lg",
+            )}
+          >
             <PhoneIcon className="size-5" aria-hidden />
             Ligar agora
           </a>
@@ -131,7 +139,11 @@ export default function HomeHero({
         </p>
 
         {!reducedMotion && HERO_IMAGES.length > 1 ? (
-          <div className="mt-10 flex gap-2" role="tablist" aria-label="Fotos de fundo">
+          <div
+            className="mt-10 flex gap-2"
+            role="tablist"
+            aria-label="Fotos de fundo"
+          >
             {HERO_IMAGES.map((_, i) => (
               <button
                 key={i}
@@ -140,7 +152,9 @@ export default function HomeHero({
                 aria-selected={i === active}
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-500",
-                  i === active ? "w-10 bg-amber-200" : "w-3 bg-white/35 hover:bg-white/55",
+                  i === active
+                    ? "w-10 bg-amber-200"
+                    : "w-3 bg-white/35 hover:bg-white/55",
                 )}
                 onClick={() => setActive(i)}
               />

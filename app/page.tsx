@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import ScrollReveal from "./components/ScrollReveal";
-import HomeHero from "./components/HomeHero";
+import ScrollReveal from "../components/ScrollReveal";
+import HomeHero from "../components/HomeHero";
 import { MailIcon, MapPinIcon, MenuIcon, PhoneIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -44,8 +44,15 @@ export default function Home() {
     <main className="flex-1 pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
         <div className="container mx-auto flex h-14 items-center justify-between gap-3 px-4">
-          <Link href="/" className="text-base font-semibold tracking-tight">
-            Transfer Ilha do Sal
+          <Link href="/" className="flex items-center group shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Transfer Ilha do Sal"
+              width={170}
+              height={170}
+              priority
+              className="object-contain transition-all duration-300 group-hover:scale-105"
+            />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
