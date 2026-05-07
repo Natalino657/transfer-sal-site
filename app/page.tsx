@@ -242,9 +242,7 @@ export default async function Home() {
           <ScrollReveal>
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold">{copy.services.title}</h2>
-              <p className="mt-2 text-muted-foreground">
-                {copy.services.body}
-              </p>
+              <p className="mt-2 text-muted-foreground">{copy.services.body}</p>
             </div>
           </ScrollReveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -256,7 +254,8 @@ export default async function Home() {
                     {item.body}
                   </p>
                   <p className="mt-4 text-xs font-medium text-primary">
-                    {copy.services.booking} {PHONE_DISPLAY} {copy.services.bookingSuffix}
+                    {copy.services.booking} {PHONE_DISPLAY}{" "}
+                    {copy.services.bookingSuffix}
                   </p>
                 </Card>
               </ScrollReveal>
@@ -306,7 +305,9 @@ export default async function Home() {
         <div className="container mx-auto px-4 py-14 md:py-20">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold md:text-4xl">{copy.contact.title}</h2>
+              <h2 className="text-3xl font-bold md:text-4xl">
+                {copy.contact.title}
+              </h2>
               <p className="mt-3 text-muted-foreground md:text-lg">
                 {copy.contact.body}
               </p>
@@ -374,7 +375,9 @@ export default async function Home() {
                 <div className="flex items-start gap-3">
                   <MailIcon className="mt-0.5 size-5 text-muted-foreground" />
                   <div>
-                    <div className="text-sm font-semibold">{copy.contact.email}</div>
+                    <div className="text-sm font-semibold">
+                      {copy.contact.email}
+                    </div>
                     <a
                       href={`mailto:${EMAIL}`}
                       className="text-muted-foreground hover:text-foreground hover:underline"
@@ -386,7 +389,9 @@ export default async function Home() {
                 <div className="flex items-start gap-3 sm:text-right">
                   <MapPinIcon className="mt-0.5 size-5 shrink-0 text-muted-foreground" />
                   <div>
-                    <div className="text-sm font-semibold">{copy.contact.place}</div>
+                    <div className="text-sm font-semibold">
+                      {copy.contact.place}
+                    </div>
                     <p className="text-sm text-muted-foreground">
                       {copy.contact.placeValue}
                     </p>
