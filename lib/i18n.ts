@@ -48,8 +48,7 @@ const pt = {
   intro: {
     badge: "Atendimento directo",
     title: "Reservas tratadas por telefone ou WhatsApp",
-    body:
-      "Explicamos disponibilidade, preço e horários em conversa — rápido e personalizado, só por chamada ou WhatsApp.",
+    body: "Explicamos disponibilidade, preço e horários em conversa — rápido e personalizado, só por chamada ou WhatsApp.",
   },
 
   services: {
@@ -85,8 +84,7 @@ const pt = {
 
   contact: {
     title: "Fala connosco",
-    body:
-      "O jeito mais simples: uma chamada ou uma mensagem. Respondemos o mais depressa possível.",
+    body: "O jeito mais simples: uma chamada ou uma mensagem. Respondemos o mais depressa possível.",
     phone: "Telefone",
     callNow: "Ligar agora",
     whatsapp: "WhatsApp",
@@ -131,8 +129,7 @@ const en = {
   intro: {
     badge: "Direct service",
     title: "Bookings handled by phone or WhatsApp",
-    body:
-      "We confirm availability, prices and times by chat — fast and personal, via call or WhatsApp.",
+    body: "We confirm availability, prices and times by chat — fast and personal, via call or WhatsApp.",
   },
 
   services: {
@@ -164,8 +161,7 @@ const en = {
 
   contact: {
     title: "Contact us",
-    body:
-      "The easiest way: a call or a message. We reply as fast as possible.",
+    body: "The easiest way: a call or a message. We reply as fast as possible.",
     phone: "Phone",
     callNow: "Call now",
     whatsapp: "WhatsApp",
@@ -179,4 +175,3 @@ const en = {
     copyright: "Transfer Sal Island",
   },
 } as const;
-

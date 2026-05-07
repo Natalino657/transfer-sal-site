@@ -7,7 +7,6 @@ import { MessageCircleIcon, PhoneIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-/** Trocar por fotos tuas em `public/` (ex.: /hero-1.jpg) quando tiveres — mantém boa luz e horizonte. */
 const HERO_IMAGES = [
   "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80",
@@ -110,8 +109,8 @@ export default function HomeHero({
           {copy.eyebrow}
         </p>
         <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm md:text-5xl lg:text-6xl">
-          {copy.title1}{" "}
-          <span className="text-amber-100">{copy.titleEm}</span> {copy.title2}
+          {copy.title1} <span className="text-amber-100">{copy.titleEm}</span>{" "}
+          {copy.title2}
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/85 md:text-xl">
           {copy.subtitle}
