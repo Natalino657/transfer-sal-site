@@ -13,7 +13,7 @@ const HERO_IMAGES = [
   "https://images.unsplash.com/photo-1714829732325-e0a0992cc936?auto=format&fit=crop&w=1920&q=80",
 ];
 
-const SLIDE_MS = 5000;
+const SLIDE_MS = 6000;
 
 type HomeHeroProps = {
   phoneDisplay: string;

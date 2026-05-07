@@ -74,7 +74,7 @@ const pt = {
 
   moments: {
     title: "Momentos",
-    body: "Alguns cenários reais da Ilha do Sal.",
+    body: "Da praia de Santa Maria às salinas de Pedra de Lume — o Sal de perto.",
     gallery: [
       "Praia em Santa Maria",
       "Buracona, Blue Eye",
@@ -155,7 +155,7 @@ const en = {
 
   moments: {
     title: "Moments",
-    body: "A few real views from Sal Island.",
+    body: "From Santa Maria beach to the Pedra de Lume salt pans — Sal up close.",
     gallery: ["Santa Maria beach", "Buracona, Blue Eye", "Pedra de Lume salt pans"],
   },
 
