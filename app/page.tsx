@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
 import HomeHero from "../components/HomeHero";
+import LocaleSwitch from "../components/LocaleSwitch";
 import { MailIcon, MapPinIcon, MenuIcon, PhoneIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +17,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { getLocale, t } from "@/lib/i18n";
 
 /** Ajusta estes dados com os contactos reais do teu tio */
 const PHONE_DISPLAY = "+238 9837959";
@@ -39,7 +41,15 @@ const GALLERY = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const locale = await getLocale();
+  const copy = t(locale);
+
+  const gallery = GALLERY.map((g, idx) => ({
+    ...g,
+    title: copy.moments.gallery[idx] ?? g.title,
+  }));
+
   return (
     <main className="flex-1 pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
@@ -60,19 +70,19 @@ export default function Home() {
               href="#servicos"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
-              Serviços
+              {copy.nav.services}
             </a>
             <a
               href="#momentos"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
-              Momentos
+              {copy.nav.moments}
             </a>
             <a
               href="#contacto"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
-              Contacto
+              {copy.nav.contact}
             </a>
             <Separator orientation="vertical" className="mx-1 h-6" />
             <a
@@ -80,7 +90,7 @@ export default function Home() {
               className={buttonVariants({ variant: "default", size: "sm" })}
             >
               <PhoneIcon className="size-4" />
-              Ligar
+              {copy.nav.call}
             </a>
             <a
               href={WHATSAPP_HREF}
@@ -88,21 +98,32 @@ export default function Home() {
               rel="noreferrer"
               className={buttonVariants({ variant: "outline", size: "sm" })}
             >
-              WhatsApp
+              {copy.nav.whatsapp}
             </a>
+            <Separator orientation="vertical" className="mx-1 h-6" />
+            <LocaleSwitch
+              locale={locale}
+              label={copy.langLabel}
+              ariaLabel={copy.langSwitchTo}
+            />
           </nav>
 
           <div className="flex items-center gap-2 md:hidden">
             <a href={PHONE_HREF} className={buttonVariants({ size: "sm" })}>
               <PhoneIcon className="size-4" />
             </a>
+            <LocaleSwitch
+              locale={locale}
+              label={copy.langLabel}
+              ariaLabel={copy.langSwitchTo}
+            />
             <Sheet>
               <SheetTrigger
                 render={
                   <Button
                     variant="ghost"
                     size="icon-sm"
-                    aria-label="Abrir menu"
+                    aria-label={copy.nav.openMenu}
                   />
                 }
               >
@@ -110,7 +131,7 @@ export default function Home() {
               </SheetTrigger>
               <SheetContent side="right" className="p-0">
                 <SheetHeader className="border-b px-4 py-4">
-                  <SheetTitle>Menu</SheetTitle>
+                  <SheetTitle>{copy.nav.menu}</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-1 p-4">
                   <a
@@ -120,7 +141,7 @@ export default function Home() {
                       "justify-start",
                     )}
                   >
-                    Serviços
+                    {copy.nav.services}
                   </a>
                   <a
                     href="#momentos"
@@ -129,7 +150,7 @@ export default function Home() {
                       "justify-start",
                     )}
                   >
-                    Momentos
+                    {copy.nav.moments}
                   </a>
                   <a
                     href="#contacto"
@@ -138,7 +159,7 @@ export default function Home() {
                       "justify-start",
                     )}
                   >
-                    Contacto
+                    {copy.nav.contact}
                   </a>
                   <Separator className="my-2" />
                   <a
@@ -149,7 +170,7 @@ export default function Home() {
                     )}
                   >
                     <PhoneIcon className="size-4" />
-                    Ligar {PHONE_DISPLAY}
+                    {copy.nav.call} {PHONE_DISPLAY}
                   </a>
                   <a
                     href={WHATSAPP_HREF}
@@ -160,7 +181,7 @@ export default function Home() {
                       "justify-start",
                     )}
                   >
-                    Abrir WhatsApp
+                    {copy.nav.openWhatsapp}
                   </a>
                 </div>
               </SheetContent>
@@ -173,25 +194,35 @@ export default function Home() {
         phoneDisplay={PHONE_DISPLAY}
         phoneHref={PHONE_HREF}
         whatsappHref={WHATSAPP_HREF}
+        copy={{
+          eyebrow: copy.hero.eyebrow,
+          title1: copy.hero.title1,
+          titleEm: copy.hero.titleEm,
+          title2: copy.hero.title2,
+          subtitle: copy.hero.subtitle,
+          callNow: copy.hero.callNow,
+          whatsapp: copy.nav.whatsapp,
+          humanResponseSuffix: copy.hero.humanResponsePrefix,
+          backgroundPhotosLabel: copy.hero.backgroundPhotos,
+        }}
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <ScrollReveal>
           <div className="mx-auto max-w-2xl text-center">
             <Badge variant="secondary" className="mb-4">
-              Atendimento directo
+              {copy.intro.badge}
             </Badge>
             <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-              Reservas tratadas por telefone ou WhatsApp
+              {copy.intro.title}
             </h2>
             <p className="mt-3 text-muted-foreground md:text-lg">
-              Explicamos disponibilidade, preço e horários em conversa — rápido
-              e personalizado, só por chamada ou WhatsApp.
+              {copy.intro.body}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <a href={PHONE_HREF} className={buttonVariants({ size: "lg" })}>
                 <PhoneIcon className="size-4" />
-                Ligar
+                {copy.nav.call}
               </a>
               <a
                 href={WHATSAPP_HREF}
@@ -199,7 +230,7 @@ export default function Home() {
                 rel="noreferrer"
                 className={buttonVariants({ size: "lg", variant: "outline" })}
               >
-                WhatsApp
+                {copy.nav.whatsapp}
               </a>
             </div>
           </div>
@@ -210,28 +241,14 @@ export default function Home() {
         <div className="container mx-auto px-4 py-14 md:py-16">
           <ScrollReveal>
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold">O que fazemos</h2>
+              <h2 className="text-3xl font-bold">{copy.services.title}</h2>
               <p className="mt-2 text-muted-foreground">
-                Serviços pensados para turistas e residentes — combina connosco
-                por chamada.
+                {copy.services.body}
               </p>
             </div>
           </ScrollReveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                title: "Aeroporto ↔ Hotel",
-                body: "Chegadas e partidas com hora combinada e apoio com bagagem.",
-              },
-              {
-                title: "Deslocações na ilha",
-                body: "Viagens pontuais ou ao longo do dia, conforme a tua necessidade.",
-              },
-              {
-                title: "Tours e passeios",
-                body: "Sugestões de roteiro ou o teu plano — falamos e ajustamos.",
-              },
-            ].map((item, idx) => (
+            {copy.services.items.map((item, idx) => (
               <ScrollReveal key={item.title} delayMs={idx * 80}>
                 <Card className="h-full border-border/80 p-6 transition-shadow hover:shadow-md">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -239,7 +256,7 @@ export default function Home() {
                     {item.body}
                   </p>
                   <p className="mt-4 text-xs font-medium text-primary">
-                    Marcação: {PHONE_DISPLAY} ou WhatsApp
+                    {copy.services.booking} {PHONE_DISPLAY} {copy.services.bookingSuffix}
                   </p>
                 </Card>
               </ScrollReveal>
@@ -252,15 +269,15 @@ export default function Home() {
         <ScrollReveal>
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold">Momentos</h2>
+              <h2 className="text-3xl font-bold">{copy.moments.title}</h2>
               <p className="mt-2 max-w-xl text-muted-foreground">
-                Imagens de exemplo
+                {copy.moments.body}
               </p>
             </div>
           </div>
         </ScrollReveal>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {GALLERY.map((g, idx) => (
+          {gallery.map((g, idx) => (
             <ScrollReveal key={g.title} delayMs={idx * 70}>
               <Card className="group overflow-hidden border-0 p-0 shadow-md ring-1 ring-black/5">
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -289,10 +306,9 @@ export default function Home() {
         <div className="container mx-auto px-4 py-14 md:py-20">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold md:text-4xl">Fala connosco</h2>
+              <h2 className="text-3xl font-bold md:text-4xl">{copy.contact.title}</h2>
               <p className="mt-3 text-muted-foreground md:text-lg">
-                O jeito mais simples: uma chamada ou uma mensagem. Respondemos o
-                mais depressa possível.
+                {copy.contact.body}
               </p>
             </div>
           </ScrollReveal>
@@ -305,7 +321,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Telefone
+                    {copy.contact.phone}
                   </div>
                   <a
                     href={PHONE_HREF}
@@ -318,7 +334,7 @@ export default function Home() {
                   href={PHONE_HREF}
                   className={buttonVariants({ className: "w-full sm:w-auto" })}
                 >
-                  Ligar agora
+                  {copy.contact.callNow}
                 </a>
               </Card>
             </ScrollReveal>
@@ -331,7 +347,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    WhatsApp
+                    {copy.contact.whatsapp}
                   </div>
                   <p className="mt-1 text-xl font-semibold">
                     {WHATSAPP_DISPLAY}
@@ -346,7 +362,7 @@ export default function Home() {
                     className: "w-full sm:w-auto",
                   })}
                 >
-                  Abrir conversa
+                  {copy.contact.openChat}
                 </a>
               </Card>
             </ScrollReveal>
@@ -358,7 +374,7 @@ export default function Home() {
                 <div className="flex items-start gap-3">
                   <MailIcon className="mt-0.5 size-5 text-muted-foreground" />
                   <div>
-                    <div className="text-sm font-semibold">Email</div>
+                    <div className="text-sm font-semibold">{copy.contact.email}</div>
                     <a
                       href={`mailto:${EMAIL}`}
                       className="text-muted-foreground hover:text-foreground hover:underline"
@@ -370,9 +386,9 @@ export default function Home() {
                 <div className="flex items-start gap-3 sm:text-right">
                   <MapPinIcon className="mt-0.5 size-5 shrink-0 text-muted-foreground" />
                   <div>
-                    <div className="text-sm font-semibold">Local</div>
+                    <div className="text-sm font-semibold">{copy.contact.place}</div>
                     <p className="text-sm text-muted-foreground">
-                      Ilha do Sal, Cabo Verde
+                      {copy.contact.placeValue}
                     </p>
                   </div>
                 </div>
@@ -384,7 +400,9 @@ export default function Home() {
 
       <footer className="border-t">
         <div className="container mx-auto flex flex-col items-center justify-between gap-3 px-4 py-8 text-sm text-muted-foreground sm:flex-row">
-          <span>© {new Date().getFullYear()} Transfer Ilha do Sal</span>
+          <span>
+            © {new Date().getFullYear()} {copy.footer.copyright}
+          </span>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
             <a href={PHONE_HREF} className="hover:text-foreground">
               {PHONE_DISPLAY}
@@ -403,7 +421,7 @@ export default function Home() {
             className={cn(buttonVariants(), "w-full gap-1.5")}
           >
             <PhoneIcon className="size-4" />
-            Ligar
+            {copy.nav.call}
           </a>
           <a
             href={WHATSAPP_HREF}
@@ -411,7 +429,7 @@ export default function Home() {
             rel="noreferrer"
             className={cn(buttonVariants({ variant: "secondary" }), "w-full")}
           >
-            WhatsApp
+            {copy.nav.whatsapp}
           </a>
         </div>
       </div>

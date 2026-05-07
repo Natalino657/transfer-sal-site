@@ -20,6 +20,17 @@ type HomeHeroProps = {
   phoneDisplay: string;
   phoneHref: string;
   whatsappHref: string;
+  copy: {
+    eyebrow: string;
+    title1: string;
+    titleEm: string;
+    title2: string;
+    subtitle: string;
+    callNow: string;
+    whatsapp: string;
+    humanResponseSuffix: string;
+    backgroundPhotosLabel: string;
+  };
 };
 
 function subscribeReducedMotion(callback: () => void) {
@@ -48,6 +59,7 @@ export default function HomeHero({
   phoneDisplay,
   phoneHref,
   whatsappHref,
+  copy,
 }: HomeHeroProps) {
   const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
@@ -95,16 +107,14 @@ export default function HomeHero({
 
       <div className="relative z-10 container mx-auto flex min-h-[min(92vh,820px)] flex-col justify-end px-4 pb-16 pt-28 md:pb-20 md:pt-32">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-200/90">
-          Ilha do Sal • Cabo Verde
+          {copy.eyebrow}
         </p>
         <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm md:text-5xl lg:text-6xl">
-          Transfer confortável.{" "}
-          <span className="text-amber-100">Fala connosco</span> e tratamos da
-          tua viagem.
+          {copy.title1}{" "}
+          <span className="text-amber-100">{copy.titleEm}</span> {copy.title2}
         </h1>
         <p className="mt-5 max-w-xl text-lg text-white/85 md:text-xl">
-          Aeroporto, hotel e passeios — marca por telefone ou WhatsApp e
-          combinamos tudo contigo, sem complicações.
+          {copy.subtitle}
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -116,7 +126,7 @@ export default function HomeHero({
             )}
           >
             <PhoneIcon className="size-5" aria-hidden />
-            Ligar agora
+            {copy.callNow}
           </a>
           <a
             href={whatsappHref}
@@ -128,21 +138,21 @@ export default function HomeHero({
             )}
           >
             <MessageCircleIcon className="size-5" aria-hidden />
-            WhatsApp
+            {copy.whatsapp}
           </a>
         </div>
 
         <p className="mt-6 text-sm text-white/70">
           <span className="font-medium text-white/90">{phoneDisplay}</span>
           {" — "}
-          resposta humana, horários à tua medida.
+          {copy.humanResponseSuffix}
         </p>
 
         {!reducedMotion && HERO_IMAGES.length > 1 ? (
           <div
             className="mt-10 flex gap-2"
             role="tablist"
-            aria-label="Fotos de fundo"
+            aria-label={copy.backgroundPhotosLabel}
           >
             {HERO_IMAGES.map((_, i) => (
               <button
