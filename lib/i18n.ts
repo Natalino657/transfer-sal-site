@@ -68,6 +68,10 @@ const pt = {
         title: "Tours e passeios",
         body: "Sugestões de roteiro ou o teu plano — falamos e ajustamos.",
       },
+      {
+        title: "Mobilidade reduzida",
+        body: "Viaturas preparadas para quem precisa de apoio extra ou de transporte adaptado — explica as tuas necessidades na marcação e tratamos do resto.",
+      },
     ],
     booking: "Marcação:",
     bookingSuffix: "ou WhatsApp",
@@ -158,6 +162,10 @@ const en = {
       {
         title: "Tours & excursions",
         body: "Suggested routes or your plan — we’ll talk and adjust.",
+      },
+      {
+        title: "Reduced mobility",
+        body: "Vehicles set up for guests who need extra support or adapted transport — tell us what you need when you book and we’ll arrange it.",
       },
     ],
     booking: "Booking:",

@@ -267,7 +267,7 @@ export default async function Home() {
               <p className="mt-2 text-muted-foreground">{copy.services.body}</p>
             </div>
           </ScrollReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {copy.services.items.map((item, idx) => (
               <ScrollReveal key={item.title} delayMs={idx * 80}>
                 <Card className="h-full border-border/80 p-6 transition-shadow hover:shadow-md">
