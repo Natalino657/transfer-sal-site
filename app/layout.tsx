@@ -79,14 +79,7 @@ export const metadata: Metadata = {
     },
   },
   category: "travel",
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
-    ],
-    shortcut: ["/favicon.ico"],
-  },
+  /** Ícones: `app/icon.tsx` + `app/apple-icon.tsx` (Next injeta automaticamente). */
 };
 
 export default function RootLayout({
