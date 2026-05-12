@@ -18,7 +18,7 @@ export function getMetadataBase(): URL {
 export const SITE = {
   name: "Transfer Ilha do Sal",
   nameEn: "Transfer Sal Island",
-  /** Frase-chave principal para SEO (turistas PT/BR) */
+
   primaryKeyword: "transfer sal cabo verde",
   phoneDisplay: "+238 9837959",
   phoneE164: "+2389837959",
