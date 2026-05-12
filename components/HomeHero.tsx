@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { MessageCircleIcon, PhoneIcon } from "lucide-react";
+import { PhoneIcon } from "lucide-react";
 
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -136,7 +137,7 @@ export default function HomeHero({
               "gap-2 border border-white/25 bg-white/15 text-white backdrop-blur hover:bg-white/25",
             )}
           >
-            <MessageCircleIcon className="size-5" aria-hidden />
+            <WhatsAppIcon className="size-5 shrink-0" />
             {copy.whatsapp}
           </a>
         </div>

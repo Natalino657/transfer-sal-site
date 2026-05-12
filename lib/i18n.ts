@@ -25,6 +25,7 @@ const pt = {
   nav: {
     services: "Serviços",
     moments: "Momentos",
+    feedback: "Feedback",
     contact: "Contacto",
     call: "Ligar",
     whatsapp: "WhatsApp",
@@ -82,6 +83,15 @@ const pt = {
     ],
   },
 
+  feedback: {
+    title: "Feedback",
+    body: "O teu transfer é conduzido por quem leva mais de 12 anos a fazer este trabalho na ilha do Sal: conhece bem os caminhos, os pontos turísticos e o dia a dia local. O foco é um serviço seguro, pontual e com bom trato — as fotos abaixo são momentos reais com visitantes que autorizaram partilhar a experiência no site.",
+    carouselLabel: "Fotografias de clientes no Sal",
+    photoAltPrefix: "Momento com clientes",
+    caption:
+      "Fotos reais, com autorização dos turistas para uso no site.",
+  },
+
   contact: {
     title: "Fala connosco",
     body: "O jeito mais simples: uma chamada ou uma mensagem. Respondemos o mais depressa possível.",
@@ -106,6 +116,7 @@ const en = {
   nav: {
     services: "Services",
     moments: "Moments",
+    feedback: "Feedback",
     contact: "Contact",
     call: "Call",
     whatsapp: "WhatsApp",
@@ -157,6 +168,14 @@ const en = {
     title: "Moments",
     body: "From Santa Maria beach to the Pedra de Lume salt pans — Sal up close.",
     gallery: ["Santa Maria beach", "Buracona, Blue Eye", "Pedra de Lume salt pans"],
+  },
+
+  feedback: {
+    title: "Feedback",
+    body: "Your transfer is handled by someone with 12+ years of experience on Sal Island: he knows the roads, sights and local rhythm. The focus is safe, punctual service with genuine care for guests — the photos below are real moments with visitors who agreed to share them on the site.",
+    carouselLabel: "Guest photos from Sal",
+    photoAltPrefix: "Moment with guests",
+    caption: "Real photos, shared with guests’ permission for the website.",
   },
 
   contact: {

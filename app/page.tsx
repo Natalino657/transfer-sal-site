@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
 import HomeHero from "../components/HomeHero";
+import { FeedbackStrip } from "../components/FeedbackStrip";
 import LocaleSwitch from "../components/LocaleSwitch";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { MailIcon, MapPinIcon, MenuIcon, PhoneIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { listFeedbackImageUrls } from "@/lib/feedback-images";
 import { cn } from "@/lib/utils";
 import { getLocale, t } from "@/lib/i18n";
 
@@ -44,6 +47,7 @@ const GALLERY = [
 export default async function Home() {
   const locale = await getLocale();
   const copy = t(locale);
+  const feedbackImages = await listFeedbackImageUrls();
 
   const gallery = GALLERY.map((g, idx) => ({
     ...g,
@@ -79,6 +83,12 @@ export default async function Home() {
               {copy.nav.moments}
             </a>
             <a
+              href="#feedback"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
+            >
+              {copy.nav.feedback}
+            </a>
+            <a
               href="#contacto"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
@@ -98,6 +108,7 @@ export default async function Home() {
               rel="noreferrer"
               className={buttonVariants({ variant: "outline", size: "sm" })}
             >
+              <WhatsAppIcon className="size-4 shrink-0" />
               {copy.nav.whatsapp}
             </a>
             <Separator orientation="vertical" className="mx-1 h-6" />
@@ -153,6 +164,15 @@ export default async function Home() {
                     {copy.nav.moments}
                   </a>
                   <a
+                    href="#feedback"
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "justify-start",
+                    )}
+                  >
+                    {copy.nav.feedback}
+                  </a>
+                  <a
                     href="#contacto"
                     className={cn(
                       buttonVariants({ variant: "ghost" }),
@@ -178,9 +198,10 @@ export default async function Home() {
                     rel="noreferrer"
                     className={cn(
                       buttonVariants({ variant: "outline" }),
-                      "justify-start",
+                      "justify-start gap-2",
                     )}
                   >
+                    <WhatsAppIcon className="size-4 shrink-0" />
                     {copy.nav.openWhatsapp}
                   </a>
                 </div>
@@ -230,6 +251,7 @@ export default async function Home() {
                 rel="noreferrer"
                 className={buttonVariants({ size: "lg", variant: "outline" })}
               >
+                <WhatsAppIcon className="size-4 shrink-0" />
                 {copy.nav.whatsapp}
               </a>
             </div>
@@ -299,6 +321,32 @@ export default async function Home() {
       </section>
 
       <section
+        id="feedback"
+        className="border-y bg-muted/25 py-14 md:py-16"
+      >
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold">{copy.feedback.title}</h2>
+              <p className="mt-2 text-muted-foreground">{copy.feedback.body}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {copy.feedback.caption}
+              </p>
+            </div>
+          </ScrollReveal>
+          {feedbackImages.length > 0 ? (
+            <div className="mt-10">
+              <FeedbackStrip
+                images={feedbackImages}
+                ariaLabel={copy.feedback.carouselLabel}
+                photoLabel={copy.feedback.photoAltPrefix}
+              />
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      <section
         id="contacto"
         className="border-t bg-gradient-to-b from-muted/40 to-background"
       >
@@ -323,6 +371,7 @@ export default async function Home() {
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     {copy.contact.phone}
+                  
                   </div>
                   <a
                     href={PHONE_HREF}
@@ -342,9 +391,7 @@ export default async function Home() {
             <ScrollReveal delayMs={90}>
               <Card className="flex flex-col gap-4 p-6 text-left shadow-sm transition hover:shadow-md">
                 <div className="flex size-11 items-center justify-center rounded-xl bg-emerald-600 text-white">
-                  <span className="text-lg font-bold" aria-hidden>
-                    W
-                  </span>
+                  <WhatsAppIcon className="size-5 shrink-0" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -360,9 +407,10 @@ export default async function Home() {
                   rel="noreferrer"
                   className={buttonVariants({
                     variant: "secondary",
-                    className: "w-full sm:w-auto",
+                    className: "w-full gap-2 sm:w-auto",
                   })}
                 >
+                  <WhatsAppIcon className="size-4 shrink-0" />
                   {copy.contact.openChat}
                 </a>
               </Card>
@@ -432,8 +480,12 @@ export default async function Home() {
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({ variant: "secondary" }), "w-full")}
+            className={cn(
+              buttonVariants({ variant: "secondary" }),
+              "w-full gap-1.5",
+            )}
           >
+            <WhatsAppIcon className="size-4 shrink-0" />
             {copy.nav.whatsapp}
           </a>
         </div>
