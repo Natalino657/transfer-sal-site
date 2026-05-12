@@ -85,11 +85,11 @@ const pt = {
 
   feedback: {
     title: "Feedback",
-    body: "O teu transfer é conduzido por quem leva mais de 12 anos a fazer este trabalho na ilha do Sal: conhece bem os caminhos, os pontos turísticos e o dia a dia local. O foco é um serviço seguro, pontual e com bom trato — as fotos abaixo são momentos reais com visitantes que autorizaram partilhar a experiência no site.",
+    body: "Há mais de 12 anos a transportar quem visita a ilha do Sal — conhecemos bem as estradas, os pontos de interesse e o que faz a diferença no dia a dia. Trabalhamos com segurança, pontualidade e um atendimento próximo; as fotos que vês são momentos reais com visitantes que autorizaram partilhar a experiência connosco online.",
     carouselLabel: "Fotografias de clientes no Sal",
     photoAltPrefix: "Momento com clientes",
     caption:
-      "Fotos reais, com autorização dos turistas para uso no site.",
+      "Imagens reais, publicadas com autorização expressa dos visitantes.",
   },
 
   contact: {
@@ -172,10 +172,10 @@ const en = {
 
   feedback: {
     title: "Feedback",
-    body: "Your transfer is handled by someone with 12+ years of experience on Sal Island: he knows the roads, sights and local rhythm. The focus is safe, punctual service with genuine care for guests — the photos below are real moments with visitors who agreed to share them on the site.",
+    body: "For well over a decade we’ve been moving visitors around Sal — we know the roads, the must-see spots and the little details that make a trip smoother. Safety, punctuality and a genuinely warm welcome come first; the photos are real moments with guests who gave their consent to appear here.",
     carouselLabel: "Guest photos from Sal",
     photoAltPrefix: "Moment with guests",
-    caption: "Real photos, shared with guests’ permission for the website.",
+    caption: "Real photos, published with each guest’s clear permission.",
   },
 
   contact: {
