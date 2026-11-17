@@ -10,12 +10,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      /** Pedidos antigos a `/favicon.ico` passam a usar o ícone gerado (`app/icon.tsx`). */
-      { source: "/favicon.ico", destination: "/icon", permanent: false },
-    ];
-  },
+  /** Favicon: `app/favicon.ico` (16/32/48), `app/icon.png` (512) e `app/apple-icon.png` (180). */
 };
 
 export default nextConfig;
